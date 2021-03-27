@@ -1,25 +1,52 @@
-otam = {'ism':'Bobir', 'yil':'1975', 'manzil':'Samarqand'}
-onam = {'ism':'Malika', 'yil':'1979', 'manzil':'Toshkent'}
-print(f"Otamning ismi {otam['ism']}, {otam['yil']}-yili {otam['manzil']}da tug\'ilgan.")
-print(f"Onamning ismi {onam['ism']}, {onam['yil']}-yili {onam['manzil']}da tug\'ilgan")
+lugat = {
+    'boolean':"mantiqiy qiymat",
+    'float':'o\'nlik son',
+    'if':'shartlarni tekshirish operatori',
+    'for':'sikl',
+    'integer':'butun son'
 
-food = {'onam':'somsa', 'otam':'osh', 'akam':'shurva', 'ukam':'manti', 'opam':'honim'}
-print(f"Otamning sevimli ovqati {food['otam']}")
-print(f"Onamning sevimli ovqati {food['onam']}")
-print(f"Akamning sevimli ovqati {food['akam']}")
-print(f"Ukamning sevimli ovqati {food['ukam']}")
-rint(f"Opamning sevimli ovqati {food['opam']}")
+}
+for k, q in sorted(lugat.items()):
+    print(f"{k.title()}-{q.title()}")
 
-atama = {'if':'agar', 'else':'aks holda', 'float':'o\'nli son', 'integer':'butun son', 'elif':'if teskarisi'}
-print(atama['if'])
-print(atama['integer'])
-print(atama['else'])
-print(atama['float'])
+davlatlar = {
+    'Uzbekiston':'Toshkent',
+    'Rossiya':'Moskva',
+    'AQSH':'Washington',
+    'Koreya':'Seul',
+    'Eron':'Tehron',
+    'Italiya':'Rim',
+    'Germaniya':'Berlin'
+}
+print("Dunyo davlatlari:")
+for dav in sorted(davlatlar):
+    print (dav.upper())
 
-lugat = {'olma':'apple', 'gilos':'cherry', 'banan':'banana', 'bodring':'cucumber', 'pomidor':'tomatola', 'enangniki':'ye ongangni ... sani'}
+print("\nDunyo poytaxtlari")
+for poy in sorted(davlatlar.values()):
+    print(poy.title())
 
-kalit = input('kalit so\'z kiriting: ').lower()
-print(lugat.get(kalit,'Bunday so\'z mavjud emas.'))
+davlat = input("Qaysi davlatning poytaxtini bilishni xohlaysiz? ")
+poytaxt = davlatlar.get(davlat)
+if poytaxt ==None:
+    print("Kechirasiz bizda bu haqida ma\'lumot yo\'q.")
+else:
+    print(f"{davlat.upper()}ning poytaxti bu {poytaxt.title()} shahri.")
 
-
-
+menu = {
+    'osh':15000,
+    'manti':10000,
+    'non':3000,
+    'baliq':25000,
+    'somsa':5000,
+    'salat':14000
+}
+print("3 ta taom buyurtma bering")
+buyurtmalar =[]
+for n in range(3):
+    buyurtmalar.append(input(f"{n+1}-taom: ").lower())
+for buyurtma in buyurtmalar:
+    if buyurtma in menu:
+        print(f"{buyurtma.title()} {menu[buyurtma]} so\'m.")
+    else:
+        print(f"Bizda {buyurtma} yo\'q")
